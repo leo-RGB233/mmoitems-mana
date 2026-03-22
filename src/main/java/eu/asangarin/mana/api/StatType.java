@@ -18,10 +18,10 @@ public enum StatType {
     MANA_REGENERATION(new ManaRegeneration()),
     STAMINA_REGENERATION(new StaminaRegeneration());
 
-    private final ItemStat stat;
+    private final ItemStat<?, ?> stat;
     private final double base;
 
-    private StatType(ItemStat stat) {
+    private StatType(ItemStat<?, ?> stat) {
         this.stat = stat;
         this.base = MMOMana.plugin.getConfig().getDouble("default." + this.name().toLowerCase().replace("_", "-"));
     }
